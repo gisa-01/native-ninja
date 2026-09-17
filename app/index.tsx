@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Logo from '../assets/img/logo_light.jpg'
+import Logo from '../assets/img/logo_light.jpg';
+import { Link } from 'expo-router';
 
 const index = () => {
   return (
@@ -10,6 +11,8 @@ const index = () => {
       <Text style={{marginTop:10, marginBottom: 30}}>
         Reading List App
       </Text>
+        <Link href='/about' style={styles.link}>About Page</Link>
+         <Link href='/contact' style={styles.link}>Contact Page</Link>
     </View>
   )
 }
@@ -31,5 +34,8 @@ const styles = StyleSheet.create({
     height:100,
     width:100
   },
-
+  link: {
+    marginVertical:10,
+    borderBottomWidth:1
+  }
 })
