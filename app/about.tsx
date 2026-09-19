@@ -1,35 +1,42 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { Link } from 'expo-router';
-import { Colors } from '../constants/Colors';
-import { useColorScheme } from 'react-native';
-const About  = () => {
+import { StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import { Colors } from "../constants/Colors";
+import { useColorScheme } from "react-native";
 
-   const colorScheme = useColorScheme();
-    const theme = colorScheme === 'dark' ? Colors.dark : Colors.light;
+import ThemedView from "../components/ThemedView";
+import ThemedText from "../components/ThemedText";
+
+const About = () => {
+  const colorScheme = useColorScheme();
+  const theme = colorScheme === "dark" ? Colors.dark : Colors.light;
 
   return (
-    <View style={[styles.container, {backgroundColor:theme.background}]}>
-      <Text style={[styles.title]}>About Page</Text>
+    <ThemedView
+      style={[styles.container, { backgroundColor: theme.background }]}
+    >
+      <ThemedText style={[styles.title]}>About Page</ThemedText>
 
-      <Link style={styles.link} href='/'>Home page</Link>
-    </View>
-  )
-}
+      <Link style={styles.link} href="/">
+        <ThemedText>Home page</ThemedText>
+      </Link>
+    </ThemedView>
+  );
+};
 
-export default About 
+export default About;
 
 const styles = StyleSheet.create({
-   container: {
-    flex:1,
-    alignItems:'center', 
-    justifyContent:'center'
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  title:{
-    fontWeight:'bold',
-    fontSize:18
+  title: {
+    fontWeight: "bold",
+    fontSize: 18,
   },
   link: {
-    marginVertical:10,
-    borderBottomWidth:1
-  }
-})
+    marginVertical: 10,
+    borderBottomWidth: 1,
+  },
+});
