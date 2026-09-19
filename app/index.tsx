@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import Logo from '../assets/img/logo_light.jpg';
 import { Link } from 'expo-router';
+import ThemedView from '../components/ThemedView';
 
 const index = () => {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Image source={Logo} style={styles.image}/>
       <Text style={styles.title}>Number 1</Text>
       <Text style={{marginTop:10, marginBottom: 30}}>
@@ -13,7 +13,7 @@ const index = () => {
       </Text>
         <Link href='/about' style={styles.link}>About Page</Link>
          <Link href='/contact' style={styles.link}>Contact Page</Link>
-    </View>
+    </ThemedView>
   )
 }
 
